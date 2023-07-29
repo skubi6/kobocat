@@ -2,3 +2,6 @@ Dockerfile
 Dockerfile.kobocat_base
 src
 **/*.pyc
+.git
+.gitattributes
+.gitignore

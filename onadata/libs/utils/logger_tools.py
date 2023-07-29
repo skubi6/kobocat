@@ -190,7 +190,7 @@ def check_submission_permissions(request, xform):
     profile = UserProfile.objects.get_or_create(user=xform.user)[0]
     if request and (profile.require_auth or xform.require_auth
                     or request.path == '/submission')\
-            and xform.user != request.user\
+            and xform.user != request.user \
             and not request.user.has_perm('report_xform', xform):
         raise PermissionDenied(
             _(u"%(request_user)s is not allowed to make submissions "
