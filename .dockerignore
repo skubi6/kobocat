@@ -5,3 +5,6 @@ src
 .git
 .gitattributes
 .gitignore
+onadata/apps/logger/migrations/0012_xform_allow_auth_submit.py
+onadata/apps/logger/migrations/0012_xform_allow_auth_submit.py~
+
