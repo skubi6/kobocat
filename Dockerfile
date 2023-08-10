@@ -1,4 +1,4 @@
-FROM python:3.10 as build-python
+FROM python:3.10.7 as build-python
 
 ENV VIRTUAL_ENV=/opt/venv \
     KOBOCAT_SRC_DIR=/srv/src/kobocat \
