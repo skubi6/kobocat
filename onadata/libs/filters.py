@@ -39,6 +39,13 @@ class RowLevelObjectPermissionFilter(guardian_filters.ObjectPermissionsFilter):
             or OneTimeAuthToken.is_signed_request(request)[0]
         ):
             return queryset
+        else:
+            from guardian.shortcuts import assign_perm, get_perms
+            for form in queryset:
+                if form.allow_auth_submit:
+                    if not request.user.has_perm('report_xform', form):
+                        assign_perm('report_xform', request.user, form)
+                        print("assign_perm row level")
 
         return super().filter_queryset(request, queryset, view)
 
