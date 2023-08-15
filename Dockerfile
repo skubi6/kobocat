@@ -12,7 +12,7 @@ RUN pip install  --quiet pip==22.0.4 && \
 COPY ./dependencies/pip/prod.txt "${TMP_DIR}/pip_dependencies.txt"
 RUN pip-sync "${TMP_DIR}/pip_dependencies.txt" 1>/dev/null
 
-FROM python:3.10.7-slim
+FROM python:3.10.7
 
 # Declare environment variables
 ENV DEBIAN_FRONTEND=noninteractive
